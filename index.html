@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>КиберКвест: Спаси Интернет!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="overlay"></div>
+
+<!-- Главное меню -->
+<div id="menu">
+    <h1 class="glitch" data-text="КИБЕРКВЕСТ">КИБЕРКВЕСТ</h1>
+    <p class="subtitle">Спаси цифровой город от угроз</p>
+    <button class="btn" onclick="openMap()">Начать</button>
+    <button class="btn" onclick="toggleMusic()">Музыка</button>
+</div>
+
+<!-- Карта уровней -->
+<div id="map" class="hidden">
+    <h2>НЕОНОВЫЙ ГОРОД</h2>
+    <p>Выбери здание‑уровень</p>
+
+    <div id="city">
+        <div class="building" onclick="startLevel(1)">1</div>
+        <div class="building" onclick="startLevel(2)">2</div>
+        <div class="building" onclick="startLevel(3)">3</div>
+        <div class="building" onclick="startLevel(4)">4</div>
+        <div class="building" onclick="startLevel(5)">5</div>
+        <div class="building" onclick="startLevel(6)">6</div>
+        <div class="building" onclick="startLevel(7)">7</div>
+        <div class="building" onclick="startLevel(8)">8</div>
+        <div class="building" onclick="startLevel(9)">9</div>
+        <div class="building" onclick="startLevel(10)">10</div>
+    </div>
+
+    <button class="btn" onclick="backToMenu()">Назад</button>
+</div>
+
+<!-- Панель персонажа -->
+<div id="hud" class="hidden">
+    <img id="cat" src="cybercat.png" alt="КиберКот‑хакер">
+    <p id="catText">Сканирую город… угрозы обнаружены.</p>
+    <p id="points">Очки: 0</p>
+</div>
+
+<!-- Игровая зона -->
+<div id="game" class="hidden">
+    <h2 id="levelTitle"></h2>
+    <div id="levelContent"></div>
+    <button class="btn" onclick="backToMap()">Выйти</button>
+</div>
+
+<!-- Финал -->
+<div id="final" class="hidden">
+    <h1>МИССИЯ ВЫПОЛНЕНА</h1>
+    <p id="finalScore"></p>
+    <button class="btn" onclick="location.reload()">Играть снова</button>
+</div>
+
+<!-- Музыка -->
+<audio id="bgMusic" loop>
+    <source src="mondamusic-cyberpunk.mp3">
+</audio>
+<label for="volumeControl">Громкость</label>
+<input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+
+
+<script src="script.js"></script>
+<footer id="footer">
+    #КиберПраво
+</footer>
+</body>
+</html>

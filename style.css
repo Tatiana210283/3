@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    background: #02070f;
+    color: #00eaff;
+    font-family: Consolas, monospace;
+    overflow-x: hidden;
+}
+
+/* Глитч‑эффект */
+.glitch {
+    font-size: 60px;
+    position: relative;
+    color: #00eaff;
+}
+.glitch:before, .glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+.glitch:before {
+    animation: glitch1 2s infinite;
+    color: #ff00c8;
+}
+.glitch:after {
+    animation: glitch2 2s infinite;
+    color: #00ff6a;
+}
+
+@keyframes glitch1 {
+    0% { left: 0; }
+    20% { left: 3px; }
+    40% { left: -3px; }
+    60% { left: 2px; }
+    80% { left: -2px; }
+    100% { left: 0; }
+}
+@keyframes glitch2 {
+    0% { left: 0; }
+    20% { left: -3px; }
+    40% { left: 3px; }
+    60% { left: -2px; }
+    80% { left: 2px; }
+    100% { left: 0; }
+}
+
+/* Кнопки */
+.btn {
+    background: transparent;
+    border: 2px solid #00eaff;
+    padding: 10px 20px;
+    color: #00eaff;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #00eaff;
+    color: #02070f;
+}
+
+/* Меню */
+#menu {
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* Карта */
+#map {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#city {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.building {
+    width: 100px;
+    height: 120px;
+    border: 2px solid #00eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.building:hover {
+    background: #00eaff;
+    color: #02070f;
+}
+
+/* HUD */
+#hud {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 20, 40, 0.7);
+    padding: 10px;
+    border: 1px solid #00eaff;
+    width: 260px;
+}
+
+#cat {
+    width: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+#game {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Финал */
+#final {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.hidden {
+    display: none;
+}
+/* Опции выбора (уровни 2,4,5,6,7,8,9,10) */
+.opt {
+    border: 1px solid #00eaff;
+    padding: 8px 12px;
+    margin: 8px auto;
+    width: 60%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.opt:hover {
+    background: rgba(0, 234, 255, 0.1);
+}
+.opt.sel {
+    background: rgba(0, 234, 255, 0.3);
+}
+
+/* Игровое поле с вирусами (уровень 3) */
+#area {
+    width: 320px;
+    height: 200px;
+    border: 1px solid #00eaff;
+    margin: 15px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.virus {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff0044;
+    position: absolute;
+    cursor: pointer;
+}
+#volumeControl {
+    width: 120px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#volumeControl::-webkit-slider-thumb {
+    background: #00eaff;
+    border-radius: 50%;
+}
+#footer {
+    text-align: center;
+    color: #00eaff;
+    margin-top: 20px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
